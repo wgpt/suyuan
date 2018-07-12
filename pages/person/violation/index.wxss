@@ -1,0 +1,56 @@
+page .container {
+  padding: 10rpx 45rpx;
+}
+page .container .list {
+  width: 100%;
+  padding: 0 20rpx 30rpx 20rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 0.5px solid #c1c1c1;
+  position: relative;
+}
+page .container .list text {
+  display: block;
+  margin-bottom: 25rpx;
+}
+page .container .list text.t1 {
+  font-size: 30rpx;
+  color: #000;
+}
+page .container .list text.t2 {
+  color: #929292;
+  font-size: 20rpx;
+}
+page .container .list text.t5 {
+  margin-bottom: 0;
+}
+page .container .list text.t3 {
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #f80952;
+}
+page .container .list .t4 {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  font-size: 26rpx;
+  color: #f10685;
+}
+page .container .list .bu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+page .container .list .bu navigator {
+  width: 40%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  letter-spacing: 3rpx;
+  color: #fff;
+  border-radius: 2px;
+  background-color: #ed902d;
+}
+page .container .list .bu navigator:last-of-type {
+  background-color: #17bd7d;
+}

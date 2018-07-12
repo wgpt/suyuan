@@ -1,0 +1,10 @@
+<view class="container">
+
+    <view class="list">
+
+        <text class="t1">违规提示1</text>
+        <text class="t2">违规内容</text>
+
+    </view>
+
+</view>

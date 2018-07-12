@@ -1,0 +1,84 @@
+.top
+  width 100%
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  min-height 400rpx
+  padding 10rpx 30rpx 0 30rpx
+  box-sizing border-box
+  .add
+    margin 0 auto
+    text-align center
+    text,image
+      display block
+    image
+      width 174rpx
+      height 134rpx
+      margin-bottom 10rpx
+
+  .list
+    margin-top 10rpx
+    display flex
+    flex-wrap wrap
+    width 100%
+    view
+      width 143rpx
+      height @width
+      line-height @width
+      text-align center
+      position relative
+      margin-right 60rpx
+      margin-top 40rpx
+      image,video
+        max-width 100%
+        max-height 100%
+        vertical-align middle
+      text
+        position absolute
+        width 35rpx
+        height @width
+        line-height @width
+        top -(@width/5)
+        right -(@width/5)
+        font-size 24rpx
+        color #ffffff
+        background-color #000
+        border-radius 50%
+
+
+.bt
+  margin-top 20rpx
+  width 100%
+  box-sizing border-box
+  display flex
+  padding 30rpx 80rpx
+  flex-direction column
+  align-items center
+  justify-content center
+  border-top .5rpx solid #f1f1f1
+  view
+    display flex
+    width 100%
+    align-items center
+    justify-content center
+    margin-top 40rpx
+    text
+      font-size 30rpx
+    input,picker
+      font-size 26rpx
+      flex 1
+      height 60rpx
+      line-height: @height
+      text-indent 1em
+      border-bottom 1px solid #f1f1f1
+    &.upper
+      width 100%
+      background-color #17bd7d
+      color #ffffff
+      letter-spacing 6rpx
+      height 60rpx
+      line-height @height
+      border-radius 3px
+      margin-top 60rpx
+

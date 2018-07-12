@@ -1,0 +1,41 @@
+
+<view class="userinfo_box" wx:if="{{show}}">
+    <view class='userinfo_prompt_box'>
+
+        <view class='userinfo_text'>{{'需要获取注册信息，请允许授权'}}</view>
+        <view class='userinfo_btn'>
+            <button bindtap='UserInfo_click' data-name='0' hover-class='none' style='color:#999;border-right:2rpx solid #E6E6E7;'>取消</button>
+            <button bindgetuserinfo='UserInfo_click' open-type='getUserInfo' hover-class='none' style='color:#009D1F;'>{{'授权'}}</button>
+        </view>
+    </view>
+</view>
+
+<view class="container">
+
+    <text class="notice">
+        此账号的身份证信息只能填写一次，是判断账号归 属的重要依据
+    </text>
+
+    <form bindsubmit="send" style="display: block;width: 100%">
+
+        <view class="mes">
+
+            <input type="text" name="realname" placeholder="请输入真实姓名" placeholder-class="pl"/>
+            <input type="idcard" name="id_number" placeholder="请输入身份证号" placeholder-class="pl"/>
+
+            <view class="number">
+                <input type="number" name="mobile" bindinput="inputBlur"  maxlength="11" placeholder="请输入手机号码" placeholder-class="pl"/>
+
+                <text class="{{codeStatus?'code send': 'code'}}" style="z-index: 9" catchtap="getCode">{{codeStatus?codeStatus:'获取验证码'}}</text>
+
+            </view>
+            <input type="number" id="mobile_code" name="mobile_code"  placeholder="请输入验证码" placeholder-class="pl"/>
+
+        </view>
+
+        <button form-type="submit" open-type="getUserInfo" class="go">
+            提交
+        </button>
+    </form>
+
+</view>

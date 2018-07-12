@@ -1,0 +1,45 @@
+<view class="container">
+    <view class="top">
+        生产步骤
+
+    </view>
+    <form bindsubmit="formSubmit" style="width: 100%">
+        <view class="list">
+
+            <view>
+                <text>操作名称</text>
+                <input type="text" name="title" placeholder="请输入操作名称"/>
+            </view>
+
+            <view>
+                <text>作业时间</text>
+                <input type="text"  name="work_time"  placeholder="请输入作业时间"/>
+            </view>
+
+            <view>
+                <text decode="true">操&ensp;作&ensp;人</text>
+                <input type="text"  name="worker"  placeholder="请输入操作人名称"/>
+            </view>
+
+            <view>
+                <text>操作说明</text>
+                <input type="text"  name="description"  placeholder="请添加操作说明"/>
+            </view>
+
+            <view class="photo">
+                <text>操作图片</text>
+
+                <button class="add">添加图片</button>
+            </view>
+
+
+        </view>
+
+        <button class="sure" formType="submit">
+            保存
+        </button>
+
+    </form>
+
+
+</view>

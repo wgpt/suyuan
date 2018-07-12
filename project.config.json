@@ -1,0 +1,89 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.1",
+	"appid": "wx5f7c566af25d913c",
+	"projectname": "suyuan",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "图片",
+					"pathName": "pages/photo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图片添加",
+					"pathName": "pages/photo/add/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "溯源增加",
+					"pathName": "pages/person/add/index",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "溯源改",
+					"pathName": "pages/person/upper/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "视频增加",
+					"pathName": "pages/mes/add/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图片编辑",
+					"pathName": "pages/photo/add/index",
+					"query": "id=7"
+				},
+				{
+					"id": -1,
+					"name": "图片管理",
+					"pathName": "pages/photo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "视频管理",
+					"pathName": "pages/mes/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

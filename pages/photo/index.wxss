@@ -1,0 +1,203 @@
+.pt {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+.pt .top {
+  width: 100%;
+  display: flex;
+  border-bottom: 0.5px solid #f1f1f1;
+  font-size: 30rpx;
+}
+.pt .top navigator,
+.pt .top view {
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.pt .top view text {
+  display: inline-block;
+  height: 100%;
+  padding: 0 10rpx;
+  color: #17bd7d;
+  border-bottom: 1px solid #17bd7d;
+}
+.nav {
+  width: 490rpx;
+  margin: 30rpx auto 10rpx auto;
+  border: 1px solid #17bd7d;
+  border-radius: 8px;
+  height: 65rpx;
+  line-height: 65rpx;
+  letter-spacing: 2rpx;
+  display: flex;
+  overflow: hidden;
+}
+.nav text {
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  height: 100%;
+  display: inline-block;
+  border-right: 0.5px solid #f1f1f1;
+}
+.nav text:last-of-type {
+  border-right: none;
+}
+.nav text.selt {
+  background-color: #17bd7d;
+  color: #fff;
+}
+.all {
+  width: 100%;
+  text-align: right;
+  border-bottom: 1px solid #f1f1f1;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.all text {
+  color: #12a7ec;
+  font-size: 24rpx;
+  margin-right: 30rpx;
+}
+scroll-view {
+  margin-top: 270rpx;
+  width: 100%;
+  height: 70vh;
+  padding: 0 20rpx 10rpx 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+scroll-view .nator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400rpx;
+}
+scroll-view .nator text {
+  text-align: center;
+}
+scroll-view .nator text text {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: 1px solid #f1f1f1;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+scroll-view .list {
+  position: relative;
+  margin-bottom: 60rpx;
+  width: 47%;
+  float: left;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+scroll-view .list:nth-child(2n) {
+  margin-left: 6%;
+}
+scroll-view .list .img {
+  width: 100%;
+  height: 320rpx;
+  text-align: center;
+  line-height: 320rpx;
+}
+scroll-view .list .img image {
+  vertical-align: middle;
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+}
+scroll-view .list text {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+scroll-view .list text.t1 {
+  font-size: 24rpx;
+  margin: 25rpx 0 10rpx 0;
+  min-height: 30rpx;
+}
+scroll-view .list text.t2 {
+  margin-bottom: 10rpx;
+  font-size: 20rpx;
+  color: #959595;
+}
+scroll-view .list .t3 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+scroll-view .list .t3 navigator,
+scroll-view .list .t3 view {
+  width: 45%;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 2px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #17bd7d;
+  text-align: center;
+}
+scroll-view .list .t3 view {
+  background-color: #ed9c00;
+}
+scroll-view .list .bar {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  width: 30rpx;
+  text-align: center;
+  border: 1rpx solid #17bd7d;
+  color: #17bd7d;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 20rpx;
+}
+scroll-view .select {
+  border: 1px solid #ff3511;
+  border-radius: 3px;
+}
+scroll-view .select text {
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+.bt {
+  position: fixed;
+  z-index: 2;
+  height: 100rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+.bt view {
+  width: 47%;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #17bd7d;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 3rpx;
+  margin-top: 20rpx;
+}
+.bt view:last-of-type {
+  background-color: #ed9c00;
+}

@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="top">
+        生产记录编辑
+
+    </view>
+
+    <view class="list">
+        <view>
+            <text>溯源名称：</text>
+            <input type="text" placeholder="请输入溯源名称" />
+        </view>
+
+        <view>
+            <text>企业名称：</text>
+
+            <text class="t1">重庆洛基亚科技有限公司</text>
+
+        </view>
+
+        <view>
+            <text decode="true">管理员：</text>
+            <text class="t1">龙小军    万昂伟    王香玲     陈怡</text>
+        </view>
+
+        <view>
+            <text>品      类：</text>
+            <picker style="" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multIndex}}" range="{{mul}}">
+                {{multIndex?(mul[0][multIndex[0]] + ' > ' + mul[1][multIndex[1]]): '请选择品类'}}
+            </picker>
+        </view>
+
+        <view class="photo">
+            <text>生产记录：</text>
+
+            <button class="add">上传生产记录</button>
+        </view>
+
+        <view class="photo">
+            <text>品质保障：</text>
+
+            <button class="add">上传</button>
+        </view>
+
+
+    </view>
+
+    <view class="sure">
+        保存
+    </view>
+
+
+</view>

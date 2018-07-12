@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/photo/index",
+    "pages/photo/add/index",
+    "pages/person/index",
+    "pages/person/add/index",
+    "pages/person/list/index",
+    "pages/person/violation/index",
+    "pages/person/card/index",
+    "pages/person/upper/index",
+    "pages/mes/index",
+    "pages/mes/add/index"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "溯源信息采集",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#A5A5A5",
+    "selectedColor": "#27B85E",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "/image/4.png",
+        "selectedIconPath": "/image/5.png"
+      },
+      {
+        "pagePath": "pages/mes/index",
+        "text": "信息管理",
+        "iconPath": "/image/3.png",
+        "selectedIconPath": "/image/6.png"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "text": "我的",
+        "iconPath": "/image/1.png",
+        "selectedIconPath": "/image/2.png"
+      }
+    ]
+  }
+}

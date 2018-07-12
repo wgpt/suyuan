@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="top">
+    <view class="add" bindtap="addClick">
+      <image style="{{pid?'width:160rpx;height:160rpx':''}}" src="{{pid?preData.thumb_url:'/image/add_photo.jpg'}}"></image>
+      <text>{{pid?'点击编辑图片':'添加图片'}}</text>
+    </view>
+
+    <view class="list" wx:if="{{!pid}}">
+      <view wx:for="{{images}}" wx:key="index">
+          <image src="{{item}}"></image>
+          <text catchtap="delImg" data-index="{{index}}">×</text>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class="bt">
+
+      <view>
+          <text>名称：</text>
+          <input type="text"  bindblur="inputBlur" value="{{pid?preData.title:''}}" placeholder="请输入图片标题" />
+      </view>
+
+      <view>
+          <text>分类：</text>
+          <picker style="" mode="multiSelector" catchtap="pickerClick" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multIndex}}" range="{{mul}}">
+                  {{multIndex?(mul[0][multIndex[0]] + ' > ' + mul[1][multIndex[1]]): '请选择分类'}}
+          </picker>
+      </view>
+
+      <view class="upper" catchtap="sure">{{pid?'确定修改':'确定上传'}}</view>
+
+  </view>
+
+
+
+</view>

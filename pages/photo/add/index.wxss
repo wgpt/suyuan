@@ -1,0 +1,95 @@
+.top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400rpx;
+  padding: 10rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+}
+.top .add {
+  margin: 0 auto;
+  text-align: center;
+}
+.top .add text,
+.top .add image {
+  display: block;
+}
+.top .add image {
+  width: 174rpx;
+  height: 134rpx;
+  margin-bottom: 10rpx;
+}
+.top .list {
+  margin-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.top .list view {
+  width: 160rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+  text-align: center;
+  position: relative;
+  margin-right: 60rpx;
+  margin-top: 40rpx;
+}
+.top .list view image {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+.top .list view text {
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  top: -7rpx;
+  right: -7rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #000;
+  border-radius: 50%;
+}
+.bt {
+  margin-top: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  padding: 30rpx 80rpx;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 0.5rpx solid #f1f1f1;
+}
+.bt view {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+.bt view text {
+  font-size: 30rpx;
+}
+.bt view input,
+.bt view picker {
+  font-size: 26rpx;
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 25rpx;
+  border-bottom: 1px solid #f1f1f1;
+}
+.bt view.upper {
+  width: 100%;
+  background-color: #17bd7d;
+  color: #fff;
+  letter-spacing: 6rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 3px;
+  margin-top: 60rpx;
+}

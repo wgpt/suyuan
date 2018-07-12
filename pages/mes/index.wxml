@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="pt">
+        <view class="top">
+
+            <navigator url="/pages/person/index" open-type="switchTab">
+                <text>溯源管理</text>
+            </navigator>
+
+            <navigator url="/pages/photo/index" open-type="redirect">
+                <text>图片管理</text>
+            </navigator>
+
+            <view>
+                <text>视频管理</text>
+            </view>
+
+        </view>
+
+        <view class="nav">
+
+            <text class="{{status == 0?'selt':''}}" data-st="0" catchtap="navClick">审核中</text>
+            <text class="{{status == 2?'selt':''}}" data-st="2" catchtap="navClick">未通过</text>
+            <text class="{{status == 1?'selt':''}}" data-st="1" catchtap="navClick">已通过</text>
+
+
+        </view>
+
+        <view class="all" bindtap="clickAll">
+            <text> {{mulStatus?'取消批量编辑':'批量编辑'}}</text>
+        </view>
+    </view>
+
+    <scroll-view scroll-y bindscrolltolower="lower" style="{{mulStatus?'padding-bottom:120rpx':''}}">
+
+        <block wx:for="{{list}}">
+            <view class="list {{item.select?'select': ''}}" catchtap="listClick" data-id="{{item.id}}" data-index="{{index}}">
+                <view class="img">
+                    <image src="{{item.thumb}}"></image>
+                </view>
+                <text class="t1">{{item.title}}</text>
+                <text class="t2">分类：{{item.cat}}</text>
+                <view class="t3" wx:if="{{!mulStatus}}">
+                    <navigator url="./add/index?id={{item.id}}">编辑视频</navigator>
+
+                    <view catchtap="delImg" data-id="{{item.id}}" data-index="{{index}}">删除</view>
+
+                </view>
+
+                <view class="bar" wx:if="{{mulStatus}}">
+                    {{item.select?'✔': ''}}
+                </view>
+
+            </view>
+        </block>
+
+
+        <navigator url="/pages/mes/add/index?status=1" class="list nator">
+            <text>
+                <text>+</text>
+                添加视频
+            </text>
+        </navigator>
+
+
+    </scroll-view>
+
+    <view class="bt" wx:if="{{mulStatus}}">
+        <view> <navigator url="/pages/photo/add/index?status=1">批量上传</navigator> </view>
+        <view catchtap="delAll">批量删除</view>
+
+    </view>
+
+
+</view>

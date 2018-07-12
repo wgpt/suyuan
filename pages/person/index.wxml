@@ -1,0 +1,64 @@
+<view class="container">
+
+    <view class="top-icon">
+
+        <navigator url="/pages/person/add/index">
+
+            <image src="/image/person-icon1.jpg"></image>
+            <text>发布溯源</text>
+
+        </navigator>
+
+        <navigator url="/pages/person/card/index">
+
+            <image src="/image/person-icon2.jpg"></image>
+            <text>实名认证</text>
+
+        </navigator>
+
+        <navigator url= "/pages/person/violation/index">
+
+            <image src="/image/person-icon3.jpg"></image>
+            <text>违规信息</text>
+
+        </navigator>
+
+
+    </view>
+
+    <view class="ah"></view>
+
+    <view class="ngt">
+        <view class="title">
+            <text style="font-weight: bolder">溯源信息列表</text>
+
+
+        </view>
+
+        <navigator url="/pages/person/list/index?status=1">
+            <text>审核中的溯源</text>
+            <image src="/image/arrow.jpg"></image>
+
+
+        </navigator>
+
+        <navigator url="/pages/person/list/index?status=3">
+            <text>审核通过的溯源</text>
+            <image src="/image/arrow.jpg"></image>
+
+
+        </navigator>
+
+        <navigator url="/pages/person/list/index?status=2">
+            <text>审核未通过的溯源</text>
+            <image src="/image/arrow.jpg"></image>
+
+
+        </navigator>
+
+    </view>
+
+    <view class="ah"></view>
+
+
+</view>
