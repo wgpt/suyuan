@@ -35,14 +35,14 @@
 
         </view>
 
-        <navigator url="/pages/person/list/index?status=1">
+        <navigator url="/pages/person/list/index?status=0">
             <text>审核中的溯源</text>
             <image src="/image/arrow.jpg"></image>
 
 
         </navigator>
 
-        <navigator url="/pages/person/list/index?status=3">
+        <navigator url="/pages/person/list/index?status=1">
             <text>审核通过的溯源</text>
             <image src="/image/arrow.jpg"></image>
 
@@ -59,6 +59,5 @@
     </view>
 
     <view class="ah"></view>
-
 
 </view>

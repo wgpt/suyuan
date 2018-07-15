@@ -1,3 +1,5 @@
+const app = getApp()
+
 Page({
 
     /**
@@ -5,24 +7,25 @@ Page({
      */
     data: {
         list_status: {
-            "1": {
+            "0": {
                 value: '审核中溯源',
                 one: false,
                 two: false
             },
-            "2": {
-                value: '审核未通过溯源',
+            "1": {
+                value: '审核通过溯源',
                 one: true,
                 two: true
             },
-            "3": {
-                value: '审核通过溯源',
+            "2": {
+                value: '审核未通过溯源',
                 one: false,
                 two: true
             }
 
         },
         url_status: 0,
+        list: []
     },
 
     /**
@@ -34,7 +37,57 @@ Page({
             url_status: options.status
         })
 
-        console.log(this.data.url_status,this.data.list_status,this.data.list_status[this.data.url_status])
+        this.getList()
+
+        // console.log(this.data.url_status,this.data.list_status,this.data.list_status[this.data.url_status])
+    },
+
+    getList(){
+        app.api({
+            url: '/product/records',
+            method: 'get',
+            cp: this,
+            data:{
+                status: this.data.url_status
+            },
+            success(res){
+                let list = res.data.list
+                // console.log(list)
+                this.cp.setData({
+                    list: this.cp.data.list.concat(list)
+                })
+
+            }
+        })
+
+    },
+
+    del(e){
+
+
+        app.api({
+            url: '/product/records/delete',
+            cp: this,
+            data:{
+                id: e.currentTarget.dataset.id
+            },
+            success(res){
+                if(res.status){
+                    wx.showToast({
+                      title: '删除成功'
+                    })
+
+                    let list = this.cp.data.list
+
+                    list = app.remove(list,e.currentTarget.dataset.index)
+
+                    this.cp.setData({
+                        list
+                    })
+
+                }
+            }
+        })
     },
 
     /**

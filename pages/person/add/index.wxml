@@ -5,31 +5,43 @@
     </view>
     <form bindsubmit="formSubmit" style="width: 100%">
         <view class="list">
+            <view>
+                <text>所属产品</text>
+                <picker bindchange="bindPickerChange" value="{{idIndex}}" range="{{idList}}">
+                        {{idList[idIndex]?idList[idIndex]: '请选择所属产品'}}
+                </picker>
+            </view>
 
             <view>
                 <text>操作名称</text>
-                <input type="text" name="title" placeholder="请输入操作名称"/>
+                <input type="text" name="title" value="{{title}}" placeholder="请输入操作名称"/>
             </view>
 
             <view>
                 <text>作业时间</text>
-                <input type="text"  name="work_time"  placeholder="请输入作业时间"/>
+                <!--<picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                    {{date ?date: '请输入作业时间'}}
+                </picker>-->
+                <input type="text"  name="work_time" value="{{work_time}}"  placeholder="请输入作业时间"/>
             </view>
 
             <view>
                 <text decode="true">操&ensp;作&ensp;人</text>
-                <input type="text"  name="worker"  placeholder="请输入操作人名称"/>
+                <input type="text"  name="worker" value="{{worker}}"  placeholder="请输入操作人名称"/>
             </view>
 
             <view>
                 <text>操作说明</text>
-                <input type="text"  name="description"  placeholder="请添加操作说明"/>
+                <input type="text"  name="description" value="{{description}}"  placeholder="请添加操作说明"/>
             </view>
 
             <view class="photo">
                 <text>操作图片</text>
+                <block wx:for="{{images}}" wx:key="index">
+                    <image src="{{item.thumb_url  || item}}" data-index="{{index}}" data-name="change" catchtap="addClick"></image>
 
-                <button class="add">添加图片</button>
+                </block>
+                <button class="add" catchtap="addClick">添加图片</button>
             </view>
 
 

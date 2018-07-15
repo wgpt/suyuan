@@ -27,14 +27,18 @@
   color: #3c801f;
   font-size: 24rpx;
 }
-.list view input {
+.list view input,
+.list view picker {
   flex: 1;
   font-size: 24rpx;
   margin-left: 30rpx;
 }
 .list view.photo {
   display: block;
-  min-height: 200rpx;
+  min-height: 160rpx;
+  height: auto;
+  padding-bottom: 40rpx;
+  overflow: hidden;
 }
 .list view.photo button.add {
   height: 60rpx;
@@ -42,6 +46,12 @@
   width: 200rpx;
   text-align: center;
   font-size: 24rpx;
+}
+.list view.photo image {
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+  margin: 25rpx auto 30rpx auto;
 }
 .sure {
   width: 90%;

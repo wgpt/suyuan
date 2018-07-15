@@ -8,7 +8,7 @@
             <text>{{pid?'点击编辑视频':'添加视频'}}</text>
         </view>
 
-        <view class="list" wx:if="{{!pid}}">
+        <view class="list" wx:if="{{!pid && video}}">
             <view>
                 <video src="{{video}}"   controls ></video>
                 <text>×</text>

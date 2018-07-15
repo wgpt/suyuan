@@ -70,7 +70,7 @@ Page({
             success(m){
                 if(m.confirm){
                     app.api({
-                        url: '/images/index/delete',
+                        url: '/video/delete',
                         data: {
                             id: e.currentTarget.dataset.id
                         },

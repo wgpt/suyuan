@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -82,6 +82,11 @@
 					"name": "视频管理",
 					"pathName": "pages/mes/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/person/index"
 				}
 			]
 		}

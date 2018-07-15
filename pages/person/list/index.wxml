@@ -1,28 +1,31 @@
 <view class="container">
 
-    <view class="list">
+    <view class="list" wx:for="{{list}}">
 
-        <text class="t1">高谷畜牧山羊养殖场</text>
-        <text class="t2">所属农场：高谷镇萍乡村镇农场</text>
-        <text class="t2" decode="true">管&ensp;理&ensp;员：刘晓东  张海军    罗技   石小满</text>
-        <text class="t2 t5" decode="true">分&emsp;&emsp;类：家禽>鸡>土鸡</text>
+        <text class="t1">{{item.title}}</text>
+        <text class="t2">所属产品：{{item.product}}</text>
+        <text class="t2" decode="true">管&ensp;理&ensp;员：{{item.worker}}</text>
+        <text class="t2 t5" decode="true">时&emsp;&emsp;间：{{item.work_time}}</text>
 
         <text class="t3" wx:if="{{list_status[url_status]['one']}}">未通过原因：未填写真实信息。</text>
 
         <text class="t4">{{list_status[url_status]['value']}}</text>
 
-        <view class="bu" wx:if="{{list_status[url_status]['two']}}">
+        <view class="bu" wx:if="{{true}}">
 
-            <navigator url="/pages/person/upper/index">
+            <navigator url="/pages/person/add/index?id={{item.id}}">
                 修改信息
             </navigator>
 
-            <navigator url="/pages/person/upper/index">
-                查询信息
+            <navigator catchtap="del" data-id="{{item.id}}" data-index="{{index}}">
+                删除信息
             </navigator>
 
         </view>
 
     </view>
+
+    <view wx:if="{{list.length == 0}}" class="none">空空如也~~~</view>
+    <button  class="loading" size="mini" loading wx:if="{{loading}}"> 加载中 </button>
 
 </view>

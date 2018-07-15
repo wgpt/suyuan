@@ -52,7 +52,7 @@ Page({
                             id[i] = []
                             for (var j in category[i].childs) {
 
-                                if (category[i].childs[j].catid == res.image.catid) {
+                                if (category[i].childs[j].catid == res.video.catid) {
                                     select = [i, j]
                                 }
                                 second[i].push(category[i].childs[j].name)
@@ -66,8 +66,8 @@ Page({
                             catid: id, // 所有分类
                             preData: res.image,
                             pid: options.id,
-                            name: res.image.title,
-                            images: [res.image.thumb_url]
+                            name: res.video.title,
+                            images: [res.vedio.video_url]
                         })
 
 
@@ -131,7 +131,7 @@ Page({
             success: function (res) {
                 wx.hideLoading()
                 var data = JSON.parse(res.data)
-                let images = that.data.images;
+                let images = that.data.images || [];
                 // console.log(data)
                 if (data.code == 200) {
 
@@ -353,10 +353,10 @@ Page({
             maxDuration: 60,
             camera: 'back',
             success: function(res) {
-                that.setData({
+                /*that.setData({
                     video: res.tempFilePath
-                })
-                // that.upImage(res.tempFilePath)
+                })*/
+                that.upImage(res.tempFilePath)
             }
         })
 
