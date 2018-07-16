@@ -125,7 +125,7 @@ Page({
             formData: {
                 code: wx.getStorageSync('code'),
                 sessionid: wx.getStorageSync('sessionid'),
-                type: 'images',
+                type: 'vedio',
                 file: tem
             },
             success: function (res) {
@@ -352,6 +352,7 @@ Page({
             sourceType: ['album','camera'],
             maxDuration: 60,
             camera: 'back',
+            compressed: true,
             success: function(res) {
                 /*that.setData({
                     video: res.tempFilePath

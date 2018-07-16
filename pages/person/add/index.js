@@ -92,7 +92,7 @@ Page({
             }
         }
 
-        if(!this.data.id[this.data.idIndex]){
+        if(!this.data.ids[this.data.idIndex]){
             app.showTip('请选择所属产品');
             return
         }

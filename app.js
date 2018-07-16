@@ -3,7 +3,7 @@ App({
     onLaunch: function () {
 
     },
-    url: 'http://wxapp.chaliyi.com',
+    url: 'http://wxapp.softft.com',
     api(option) {
         wx.showLoading({
             title: '加载中',
@@ -33,7 +33,7 @@ App({
             wx.login({
                 success(e){
                     wx.request({
-                        url: url + option.url, //仅为示例，并非真实的接口地址
+                        url: url + option.url,
                         data: {
                             ...option.data,
                             code: e.code
@@ -45,7 +45,6 @@ App({
                         success: function(res) {
                             wx.hideLoading()
                             res = res.data;
-
                             if(res.code == 203){
 
                                 wx.redirectTo({
@@ -151,11 +150,18 @@ App({
                     'content-type': option.contentType // 默认值
                 },
                 success: function(res) {
+                    wx.hideLoading()
                     res = res.data;
 
                     if(res.code == 202){ //失效
                         wx.removeStorageSync('code')
                         that.api(option)
+                        return
+                    }else if(res.code == 201){
+                        wx.removeStorageSync('code')
+                        wx.removeStorageSync('sessionid')
+                        that.api(option)
+
                         return
                     }
 
@@ -171,14 +177,20 @@ App({
                     }
                 },
                 fail(e){
-                    wx.showToast({
-                        title: '网络错误',
-                        duration: 2000,
-                        icon: 'loading'
-                    })
+                    wx.hideLoading()
+
+                    setTimeout(()=>{
+                        wx.showToast({
+                            title: '网络错误',
+                            duration: 2000,
+                            icon: 'loading'
+                        })
+                    },0)
+
+
                 },
                 complete(e){
-                    wx.hideLoading()
+
                     option.complete && option.complete()
                 }
             })

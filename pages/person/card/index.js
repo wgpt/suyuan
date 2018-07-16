@@ -114,7 +114,7 @@ Page({
                             wx.setStorageSync('code',r.code)
                             wx.setStorageSync('userInfo',res.userInfo)
 
-                            wx.redirectTo({
+                            wx.switchTab({
                               url: '/pages/main/main'
                             })
                         },
