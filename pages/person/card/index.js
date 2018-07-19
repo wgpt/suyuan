@@ -90,7 +90,13 @@ Page({
               title: '注册失败'
             })
         }else{
-
+            that.setData({
+                show: false
+            })
+            wx.showLoading({
+                title: '正在提交信息',
+                mask: true
+            })
 
             let data = this.data
             e = e.detail
@@ -110,13 +116,33 @@ Page({
                         },
                         auth:false,
                         success(res){
-                            wx.setStorageSync('sessionid',e.sessionid)
-                            wx.setStorageSync('code',r.code)
-                            wx.setStorageSync('userInfo',res.userInfo)
 
-                            wx.switchTab({
-                              url: '/pages/main/main'
-                            })
+                            if(res.status){
+                                wx.hideLoading()
+
+                                wx.setStorageSync('sessionid',e.sessionid)
+                                wx.setStorageSync('code',r.code)
+                                wx.setStorageSync('userInfo',res.userInfo)
+
+                                wx.showToast({
+                                    title: '注册成功',
+                                    duration: 3000
+                                })
+                                setTimeout(()=>{
+                                    wx.switchTab({
+                                        url: '/pages/main/main'
+                                    })
+                                },1500)
+                            }else{
+                                wx.showToast({
+                                    title:  res.msg,
+                                    icon: 'none',
+                                    duration: 1500
+                                })
+                            }
+
+
+
                         },
                         complete(res){
                             that.setData({
@@ -128,8 +154,8 @@ Page({
                 },
                 faile(e){
                     wx.showToast({
-                      title: '注册失败'
-
+                      title: '注册失败',
+                      icon: 'none'
                     })
                 }
             })

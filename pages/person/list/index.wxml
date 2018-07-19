@@ -1,5 +1,5 @@
 <view class="container">
-
+    <scroll-view scroll-y  lower-threshold="50" bindscrolltolower="lower">
     <view class="list" wx:for="{{list}}">
 
         <text class="t1">{{item.title}}</text>
@@ -26,6 +26,6 @@
     </view>
 
     <view wx:if="{{list.length == 0}}" class="none">空空如也~~~</view>
-    <button  class="loading" size="mini" loading wx:if="{{loading}}"> 加载中 </button>
-
+    <button  class="loading" size="mini" loading="{{lowerEnd?false:ture}}" wx:if="{{loading}}"> {{lowerEnd?'没有啦~~~':'加载中'}} </button>
+    </scroll-view>
 </view>

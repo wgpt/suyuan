@@ -30,7 +30,7 @@ page .container .list text.t3 {
 }
 page .container .list .t4 {
   position: absolute;
-  right: 20rpx;
+  right: 43rpx;
   top: 20rpx;
   font-size: 26rpx;
   color: #f10685;

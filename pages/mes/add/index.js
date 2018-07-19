@@ -64,10 +64,9 @@ Page({
                             mul: [first, second[0]],
                             list: second,
                             catid: id, // 所有分类
-                            preData: res.image,
+                            video_url: res.video.video_url,
                             pid: options.id,
                             name: res.video.title,
-                            images: [res.vedio.video_url]
                         })
 
 
@@ -118,27 +117,29 @@ Page({
             mask: true
         })
         let that = this
+
         wx.uploadFile({
             url: app.url + '/misc/video',
             filePath: tem,
             name: 'file',
+            method: 'post',
+            header: {'content-type': 'multipart/form-data'},
             formData: {
                 code: wx.getStorageSync('code'),
                 sessionid: wx.getStorageSync('sessionid'),
-                type: 'vedio',
                 file: tem
             },
             success: function (res) {
                 wx.hideLoading()
                 var data = JSON.parse(res.data)
-                let images = that.data.images || [];
+                let images = that.data || [];
                 // console.log(data)
                 if (data.code == 200) {
 
-                    if (that.data.pid) {
                         that.setData({
-                            'preData.thumb_url': data.data.thumb_url[0]
+                            'video_url': data.data.video_url[0]
                         })
+                    /*if (that.data.pid) {
 
                     } else {
                         images.push(data.data.thumb_url[0])
@@ -146,7 +147,7 @@ Page({
                         that.setData({
                             images: images
                         })
-                    }
+                    }*/
 
 
                 } else {
@@ -230,7 +231,7 @@ Page({
                 data: {
                     title: name,
                     catid: this.data.catid[catid[0]][catid[1]],
-                    images: images
+                    video: this.data.video_url
                 },
                 success(e) {
                     if (e.status) {
@@ -254,14 +255,14 @@ Page({
 
     },
 
-    delImg(e) {
+    delVideo(e) {
         // console.log(e)
-        let images = this.data.images
+        /*let images = this.data.images
 
-        images = app.remove(images, e.currentTarget.dataset.index)
+        images = app.remove(images, e.currentTarget.dataset.index)*/
 
         this.setData({
-            images
+            video_url: false
         })
 
     },

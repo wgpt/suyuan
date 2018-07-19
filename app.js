@@ -3,7 +3,7 @@ App({
     onLaunch: function () {
 
     },
-    url: 'http://wxapp.softft.com',
+    url: 'https://wxapp.softft.com',
     api(option) {
         wx.showLoading({
             title: '加载中',
@@ -71,9 +71,14 @@ App({
                         },
                         fail(e){
                             wx.hideLoading()
+                            wx.showModal({
+                                title: '提示',
+                                content: JSON.stringify(e)
+                            })
+
                             setTimeout(()=>{
                                 wx.showToast({
-                                    title: '网络错误',
+                                    title: '授权失败',
                                     duration: 2000,
                                     icon: 'loading'
                                 })
@@ -179,9 +184,14 @@ App({
                 fail(e){
                     wx.hideLoading()
 
+                    /*wx.showModal({
+                        title: '提示',
+                        content: JSON.parse(e.data)
+                    })*/
+
                     setTimeout(()=>{
                         wx.showToast({
-                            title: '网络错误',
+                            title: e.msg || '网络错误',
                             duration: 2000,
                             icon: 'loading'
                         })

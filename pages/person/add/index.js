@@ -42,6 +42,11 @@ Page({
                             idIndex = i
                         }
                     }
+                    let images = []
+                    for(var i in records.images){
+                        images.push(records.images[i].thumb_url)
+                    }
+                    records.images = images
 
                     this.cp.setData({
                         idList: list,
@@ -102,24 +107,66 @@ Page({
             return
         }
 
-        app.api({
-            url: '/product/records/add',
-            data:{
-                productid: this.data.ids[this.data.idIndex],
-                images: this.data.images,
-                ...data
-            },
-            success(res){
-                if(res.code == 200){
-                    wx.showToast({
-                      title: '保存成功'
-                    })
+        if(this.data.id){
+            app.api({
+                url: '/product/records/edit',
+                method: 'post',
+                data:{
+                    id: this.data.id,
+                    productid: this.data.ids[this.data.idIndex],
+                    images: this.data.images,
+                    ...data
+                },
+                success(res){
+                    if(res.status){
+                        wx.showToast({
+                            title: '保存成功',
+                            duration:3000
+                        })
 
-                    wx.navigateBack()
+                        setTimeout(()=>{
+                            wx.switchTab({
+                                url: '/pages/person/index'
+                            })
+
+                        },2000)
+
+                    }else{
+                        app.showTip(res.msg)
+                    }
                 }
-            }
 
-        })
+            })
+        }else{
+            app.api({
+                url: '/product/records/add',
+                data:{
+                    productid: this.data.ids[this.data.idIndex],
+                    images: this.data.images,
+                    ...data
+                },
+                success(res){
+                    if(res.status){
+                        wx.showToast({
+                            title: '添加成功',
+                            duration:3000
+                        })
+
+                        setTimeout(()=>{
+                            wx.switchTab({
+                                url: '/pages/person/index'
+                            })
+
+                        },2000)
+
+                    }else{
+                        app.showTip(res.msg)
+                    }
+                }
+
+            })
+        }
+
 
         // console.log(e)
     },

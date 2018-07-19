@@ -25,7 +25,9 @@ Page({
 
         },
         url_status: 0,
-        list: []
+        list: [],
+        pageNo: 1,
+        listNoDo: true
     },
 
     /**
@@ -43,51 +45,92 @@ Page({
     },
 
     getList(){
-        app.api({
-            url: '/product/records',
-            method: 'get',
-            cp: this,
-            data:{
-                status: this.data.url_status
-            },
-            success(res){
-                let list = res.data.list
-                // console.log(list)
-                this.cp.setData({
-                    list: this.cp.data.list.concat(list)
-                })
 
-            }
-        })
+        if(!this.data.lowerEnd && this.data.listNoDo){
+            app.api({
+                url: '/product/records',
+                method: 'get',
+                data:{
+                    pageNo: this.pageNo
+                },
+                cp: this,
+                data:{
+                    status: this.data.url_status
+                },
+                success(res){
+                    let list = res.data.list
+
+                    if(list.length  == 0){
+                        // console.log(list)
+                        this.cp.setData({
+                            loading: true,
+                            lowerEnd: true
+                        })
+                    }else{
+                        // console.log(list)
+                        this.cp.setData({
+                            list: this.cp.data.list.concat(list),
+                            listNoDo: true
+                        })
+                    }
+
+
+
+
+                }
+            })
+        }
+
+
+
+    },
+
+    lower(e){
+      this.setData({
+          loading: true,
+          listNodo: false,
+      })
+
+      this.getList()
 
     },
 
     del(e){
 
+        let that = this
+        wx.showModal({
+            title: '提示',
+            content: '你确定要删除此记录',
+            success(m){
+                if(m.confirm){
+                    app.api({
+                        url: '/product/records/delete',
+                        cp: that,
+                        data:{
+                            id: e.currentTarget.dataset.id
+                        },
+                        success(res){
+                            if(res.status){
+                                wx.showToast({
+                                    title: '删除成功'
+                                })
 
-        app.api({
-            url: '/product/records/delete',
-            cp: this,
-            data:{
-                id: e.currentTarget.dataset.id
-            },
-            success(res){
-                if(res.status){
-                    wx.showToast({
-                      title: '删除成功'
+                                let list = this.cp.data.list
+
+                                list = app.remove(list,e.currentTarget.dataset.index)
+
+                                this.cp.setData({
+                                    list
+                                })
+
+                            }
+                        }
                     })
-
-                    let list = this.cp.data.list
-
-                    list = app.remove(list,e.currentTarget.dataset.index)
-
-                    this.cp.setData({
-                        list
-                    })
-
                 }
             }
         })
+
+
     },
 
     /**

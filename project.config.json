@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -86,7 +86,14 @@
 				{
 					"id": -1,
 					"name": "我的",
-					"pathName": "pages/person/index"
+					"pathName": "pages/person/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "未审核",
+					"pathName": "pages/person/list/index",
+					"query": "status=0"
 				}
 			]
 		}
