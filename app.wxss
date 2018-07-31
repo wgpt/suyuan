@@ -18,6 +18,7 @@ button.loading{
   box-shadow: none;
   font-size: 28rpx;
   border-radius: 0;
+  width:100%;
 }
 
 button.loading::after{

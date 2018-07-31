@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -94,6 +94,11 @@
 					"name": "未审核",
 					"pathName": "pages/person/list/index",
 					"query": "status=0"
+				},
+				{
+					"id": -1,
+					"name": "实名验证",
+					"pathName": "pages/person/card/index"
 				}
 			]
 		}

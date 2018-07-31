@@ -35,13 +35,7 @@
   position: relative;
   margin: 40rpx auto;
 }
-.top image,
-.top video {
-  max-width: 100%;
-  max-height: 100%;
-  vertical-align: middle;
-}
-.top text {
+.top .list text {
   position: absolute;
   width: 35rpx;
   height: 35rpx;
@@ -52,6 +46,12 @@
   color: #fff;
   background-color: #000;
   border-radius: 50%;
+}
+.top image,
+.top video {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
 }
 .bt {
   margin-top: 20rpx;
@@ -80,7 +80,7 @@
   flex: 1;
   height: 60rpx;
   line-height: 60rpx;
-  text-indent: 1em;
+  padding-left: 20rpx;
   border-bottom: 1px solid #f1f1f1;
 }
 .bt view.upper {

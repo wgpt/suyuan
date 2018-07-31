@@ -17,15 +17,15 @@
                 修改信息
             </navigator>
 
-            <navigator catchtap="del" data-id="{{item.id}}" data-index="{{index}}">
+            <view url="" catchtap="del" data-id="{{item.id}}" data-index="{{index}}">
                 删除信息
-            </navigator>
+            </view>
 
         </view>
 
     </view>
 
     <view wx:if="{{list.length == 0}}" class="none">空空如也~~~</view>
-    <button  class="loading" size="mini" loading="{{lowerEnd?false:ture}}" wx:if="{{loading}}"> {{lowerEnd?'没有啦~~~':'加载中'}} </button>
+    <button  class="loading" size="mini" loading="{{lowerEnd?false:ture}}" wx:if="{{loading && list.length > 0}}"> {{lowerEnd?'没有啦~~~':'加载中'}} </button>
     </scroll-view>
 </view>

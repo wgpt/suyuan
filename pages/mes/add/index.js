@@ -118,7 +118,7 @@ Page({
         })
         let that = this
 
-        wx.uploadFile({
+        let  uploadTask = wx.uploadFile({
             url: app.url + '/misc/video',
             filePath: tem,
             name: 'file',
@@ -160,6 +160,21 @@ Page({
             }
         })
 
+        uploadTask.onProgressUpdate((res) => {
+
+           /* if(res.totalBytesSent == res.totalBytesSent){
+
+            }else{
+                wx.showLoading({
+                    title: '加载中...' + res.progress,
+                    mask: true
+                })
+            }
+            console.log('上传进度', res.progress)
+            console.log('已经上传的数据长度', res.totalBytesSent)
+            console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)*/
+        })
+
     },
     inputBlur(e) {
         this.setData({
@@ -184,9 +199,8 @@ Page({
             return
         }
 
-        let images = this.data.images.join(',')
-        if (!images) {
-            app.showTip('请选择至少一张图片')
+        if (!this.data.video_url) {
+            app.showTip('请上传视频')
             return
         }
 
@@ -199,11 +213,11 @@ Page({
 
         if (this.data.pid) {
             app.api({
-                url: '/images/index/edit',
+                url: '/video/index/edit',
                 data: {
                     title: name,
                     catid: this.data.catid[catid[0]][catid[1]],
-                    image: this.data.preData.thumb_url,
+                    video: this.data.video_url,
                     id: this.data.pid
                 },
                 success(e) {
@@ -214,8 +228,8 @@ Page({
                             duration: 3000
                         })
                         setTimeout(() => {
-                            wx.redirectTo({
-                                url: "/pages/photo/index"
+                            wx.switchTab({
+                                url: "/pages/mes/index"
                             })
                         }, 2000)
 
@@ -227,7 +241,7 @@ Page({
             })
         } else {
             app.api({
-                url: '/images/index/add',
+                url: '/video/index/add',
                 data: {
                     title: name,
                     catid: this.data.catid[catid[0]][catid[1]],
@@ -241,8 +255,8 @@ Page({
                             duration: 3000
                         })
                         setTimeout(() => {
-                            wx.redirectTo({
-                                url: "/pages/photo/index"
+                            wx.switchTab({
+                                url: "/pages/mes/index"
                             })
                         }, 2000)
                     } else {

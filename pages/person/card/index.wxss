@@ -23,6 +23,23 @@ page .container {
 .mes input .pl {
   color: #adadad;
 }
+.mes .images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx 10rpx;
+  box-sizing: border-box;
+}
+.mes .images image {
+  width: 90%;
+}
+.mes .images view {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  border: 1rpx solid rgba(102,102,102,0.4);
+  border-radius: 10rpx;
+}
 .mes .number {
   position: relative;
 }
@@ -33,7 +50,7 @@ page .container {
   background-color: #ff3c00;
   border-radius: 3px;
   color: #fff;
-  padding: 10rpx 15rpx;
+  padding: 20rpx 20rpx;
 }
 .mes .number .send {
   background-color: #666;

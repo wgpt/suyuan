@@ -4,7 +4,7 @@
 
     <view class="top">
         <view class="add" bindtap="addClick">
-            <image style="{{pid?'width:160rpx;height:160rpx':''}}" src="{{pid?preData.thumb_url:'/image/add_photo.jpg'}}"></image>
+            <image style="{{pid?'width:160rpx;height:160rpx':''}}" src="/image/add_photo.jpg"></image>
             <text>{{pid?'点击编辑视频':'添加视频'}}</text>
         </view>
 
@@ -22,7 +22,7 @@
 
         <view>
             <text>名称：</text>
-            <input type="text"  bindblur="inputBlur" value="{{pid?preData.title:''}}" placeholder="请输入视频标题" />
+            <input type="text"  bindblur="inputBlur" value="{{name}}" placeholder="请输入视频标题" />
         </view>
 
         <view>

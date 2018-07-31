@@ -65,10 +65,9 @@ Page({
     send(e) {
         var res = e.detail.value
 
-        if (!res.id_number) {
-            app.showTip('请输入身份证号')
+        if (!this.data.image) {
+            app.showTip('请输入上传身份证或营业执照')
         } else if (!res.mobile) {
-
             app.showTip('请输入手机号码')
         } else if (!res.mobile_code) {
             app.showTip('请输入验证码')
@@ -107,7 +106,7 @@ Page({
                         url: '/account/login/get_user_info',
                         data:{
                             realname: data.realname,
-                            id_number: data.id_number,
+                            image: data.image,
                             mobile: data.mobile,
                             encryptedData: e.encryptedData,
                             iv: e.iv,
@@ -190,11 +189,19 @@ Page({
                     mobile
                 },
                 success(e){
-                    wx.showToast({
-                      title: '发送成功'
-                    })
-                     this.cp.timeSet()
+
                     console.log(e)
+
+                    if(e.status){
+                        wx.showToast({
+                            title: '发送成功'
+                        })
+                        this.cp.timeSet()
+
+                    }else{
+                        app.showTip(e.msg)
+                    }
+
                 }
             })
         }
@@ -219,6 +226,17 @@ Page({
 
         },1000)
 
+    },
+
+    upImage(e){
+        app.addImage(1).then((res)=>{
+            this.setData(({
+                image: res[0]
+            }))
+        })
+
+
     }
+
 
 })

@@ -45,16 +45,14 @@ Page({
     },
 
     getList(){
-
         if(!this.data.lowerEnd && this.data.listNoDo){
+
             app.api({
                 url: '/product/records',
                 method: 'get',
-                data:{
-                    pageNo: this.pageNo
-                },
                 cp: this,
                 data:{
+                    pageNo: this.data.pageNo,
                     status: this.data.url_status
                 },
                 success(res){
@@ -64,7 +62,7 @@ Page({
                         // console.log(list)
                         this.cp.setData({
                             loading: true,
-                            lowerEnd: true
+                            lowerEnd:  true
                         })
                     }else{
                         // console.log(list)
@@ -89,9 +87,11 @@ Page({
       this.setData({
           loading: true,
           listNodo: false,
+          pageNo: this.data.pageNo + 1
+      },()=>{
+          this.getList()
       })
 
-      this.getList()
 
     },
 

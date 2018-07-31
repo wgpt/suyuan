@@ -29,22 +29,23 @@
       text-align:center;
       position:relative;
       margin:40rpx auto;
+    text
+      position absolute
+      width 35rpx
+      height @width
+      line-height @width
+      top -(@width/5)
+      right -(@width/5)
+      font-size 24rpx
+      color #ffffff
+      background-color #000
+      border-radius 50%
 
   image,video
         max-width 100%
         max-height 100%
         vertical-align middle
-      text
-        position absolute
-        width 35rpx
-        height @width
-        line-height @width
-        top -(@width/5)
-        right -(@width/5)
-        font-size 24rpx
-        color #ffffff
-        background-color #000
-        border-radius 50%
+
 
 
 .bt
@@ -70,7 +71,8 @@
       flex 1
       height 60rpx
       line-height: @height
-      text-indent 1em
+      //text-indent 1em
+      padding-left 20rpx
       border-bottom 1px solid #f1f1f1
     &.upper
       width 100%

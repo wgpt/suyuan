@@ -10,15 +10,20 @@ Page({
         error_msg:{
             description: "请添加操作说明",
             title: "请输入操作名称",
-            work_time : "请输入作业时间",
             worker: "请输入操作人名称"
-        }
+        },
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let now = new Date();
+
+        this.setData({
+            now_time: now.getFullYear() + '-' + zero(now.getMonth()+1) + '-' + zero(now.getDate())
+        })
 
         if(options.id){
             app.api({
@@ -86,6 +91,21 @@ Page({
 
     },
 
+    videoClick(e){
+      app.addVideo().then(res=>{
+          this.setData({
+              video: res
+          })
+      })
+    },
+
+
+    bindDateChange(e){
+      this.setData({
+          work_time: e.detail.value
+      })
+    },
+
     formSubmit(e) {
         let data = e.detail.value
 
@@ -102,6 +122,12 @@ Page({
             return
         }
 
+        if(!this.data.work_time){
+            app.showTip('请选择作业时间');
+
+            return
+        }
+
         if(!this.data.images){
             app.showTip('请添加图片');
             return
@@ -115,6 +141,7 @@ Page({
                     id: this.data.id,
                     productid: this.data.ids[this.data.idIndex],
                     images: this.data.images,
+                    work_time: this.data.work_time,
                     ...data
                 },
                 success(res){
@@ -143,6 +170,7 @@ Page({
                 data:{
                     productid: this.data.ids[this.data.idIndex],
                     images: this.data.images,
+                    work_time: this.data.work_time,
                     ...data
                 },
                 success(res){
@@ -304,3 +332,14 @@ Page({
 
     }
 })
+
+
+function zero(x) {
+    if( x > 0 && x < 10 ){
+        return '0' + x
+    }else if(x < 0){
+        return '00'
+    }else{
+        return x
+    }
+}

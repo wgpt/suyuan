@@ -1,6 +1,9 @@
 page .container {
   padding: 10rpx 45rpx;
 }
+page .container scroll-view {
+  height: 100vh;
+}
 page .container .list {
   width: 100%;
   padding: 0 20rpx 30rpx 20rpx;
@@ -18,7 +21,7 @@ page .container .list text.t1 {
 }
 page .container .list text.t2 {
   color: #929292;
-  font-size: 20rpx;
+  font-size: 24rpx;
 }
 page .container .list text.t5 {
   margin-bottom: 0;
@@ -41,7 +44,8 @@ page .container .list .bu {
   justify-content: space-between;
   margin-top: 30rpx;
 }
-page .container .list .bu navigator {
+page .container .list .bu navigator,
+page .container .list .bu view {
   width: 40%;
   height: 50rpx;
   line-height: 50rpx;
@@ -51,7 +55,7 @@ page .container .list .bu navigator {
   border-radius: 2px;
   background-color: #ed902d;
 }
-page .container .list .bu navigator:last-of-type {
+page .container .list .bu view {
   background-color: #17bd7d;
 }
 page .container .none {

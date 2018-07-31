@@ -107,7 +107,8 @@ scroll-view .list .img {
   text-align: center;
   line-height: 320rpx;
 }
-scroll-view .list .img image {
+scroll-view .list .img image,
+scroll-view .list .img video {
   vertical-align: middle;
   max-height: 100%;
   max-width: 100%;

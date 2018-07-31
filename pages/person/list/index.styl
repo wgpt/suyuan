@@ -1,6 +1,7 @@
 page .container
   padding 10rpx 45rpx
-
+  scroll-view
+    height 100vh
   .list
     width 100%
     padding 0 20rpx 30rpx 20rpx
@@ -15,7 +16,7 @@ page .container
         color #000
       &.t2
         color #929292
-        font-size 20rpx
+        font-size 24rpx
       &.t5
           margin-bottom 0
 
@@ -35,7 +36,7 @@ page .container
       display flex
       justify-content space-between
       margin-top 30rpx
-      navigator
+      navigator,view
         width 40%
         height 50rpx
         line-height 50rpx
@@ -44,7 +45,7 @@ page .container
         color #ffffff
         border-radius 2px
         background-color #ED902D
-        &:last-of-type
+      view
           background-color #17BD7D
   .none
      width 100%
