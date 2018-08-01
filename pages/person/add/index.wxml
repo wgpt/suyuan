@@ -46,7 +46,7 @@
                 <video src="{{video}}" class="video"  controls wx:if="{{video}}"></video>
                 <button class="add" catchtap="addClick">添加图片</button>
 
-                <button class="add" style="margin-top: 30rpx" catchtap="videoClick">{{video?'上传':'更换'}}视频</button>
+                <button class="add" style="margin-top: 30rpx" catchtap="videoClick">{{video?'更换':'上传'}}视频</button>
             </view>
 
 

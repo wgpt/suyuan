@@ -141,6 +141,7 @@ Page({
                     id: this.data.id,
                     productid: this.data.ids[this.data.idIndex],
                     images: this.data.images,
+                    video: this.data.video,
                     work_time: this.data.work_time,
                     ...data
                 },
@@ -170,6 +171,7 @@ Page({
                 data:{
                     productid: this.data.ids[this.data.idIndex],
                     images: this.data.images,
+                    video: this.data.video,
                     work_time: this.data.work_time,
                     ...data
                 },

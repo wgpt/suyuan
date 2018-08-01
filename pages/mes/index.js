@@ -180,7 +180,7 @@ Page({
                     }
 
                     app.api({
-                        url: '/video/delete',
+                        url: '/video/index/delete',
                         data: {
                             id: id.join(',')
                         },
