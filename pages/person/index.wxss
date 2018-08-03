@@ -20,7 +20,7 @@ page .container {
 }
 .top-icon navigator text {
   color: #101013;
-  font-size: 28rpx;
+  font-size: 30rpx;
 }
 .ah {
   width: 100%;
@@ -53,6 +53,6 @@ page .container {
 .ngt navigator text,
 .ngt .title text {
   color: #101013;
-  font-size: 28rpx;
+  font-size: 32rpx;
   text-indent: 50rpx;
 }

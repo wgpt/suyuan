@@ -76,6 +76,7 @@ scroll-view .nator {
   justify-content: center;
   align-items: center;
   min-height: 400rpx;
+  font-size: 32rpx;
 }
 scroll-view .nator text {
   text-align: center;
@@ -122,11 +123,11 @@ scroll-view .list text {
   white-space: nowrap;
 }
 scroll-view .list text.t1 {
-  font-size: 24rpx;
+  font-size: 30rpx;
   margin: 25rpx 0 10rpx 0;
 }
 scroll-view .list text.t2 {
-  font-size: 20rpx;
+  font-size: 26rpx;
   color: #959595;
 }
 scroll-view .list .t3 {
@@ -161,7 +162,7 @@ scroll-view .list .bar {
   color: #17bd7d;
   border-radius: 50%;
   background-color: #fff;
-  font-size: 20rpx;
+  font-size: 24rpx;
 }
 .bt {
   position: fixed;

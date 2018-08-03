@@ -361,6 +361,14 @@ App({
             })
         })
 
+    },
+    go(e){
+        let u = e.currentTarget.dataset.url
+        if(u){
+            wx.navigateTo({
+              url: u
+            })
+        }
     }
 
 })

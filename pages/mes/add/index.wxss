@@ -11,6 +11,7 @@
 .top .add {
   margin: 0 auto;
   text-align: center;
+  font-size: 30rpx;
 }
 .top .add text,
 .top .add image {
@@ -42,7 +43,7 @@
   line-height: 35rpx;
   top: -7rpx;
   right: -7rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #fff;
   background-color: #000;
   border-radius: 50%;
@@ -72,11 +73,11 @@
   margin-top: 40rpx;
 }
 .bt view text {
-  font-size: 30rpx;
+  font-size: 34rpx;
 }
 .bt view input,
 .bt view picker {
-  font-size: 26rpx;
+  font-size: 30rpx;
   flex: 1;
   height: 60rpx;
   line-height: 60rpx;
@@ -88,8 +89,9 @@
   background-color: #17bd7d;
   color: #fff;
   letter-spacing: 6rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   border-radius: 3px;
   margin-top: 60rpx;
+  font-size: 32rpx;
 }

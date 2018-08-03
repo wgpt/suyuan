@@ -16,6 +16,7 @@
   text-align: center;
   flex-direction: column;
   align-items: center;
+  font-size: 30rpx;
 }
 .main-bar navigator image {
   width: 75rpx;
@@ -61,4 +62,33 @@
   border-radius: 15rpx;
   margin-top: 60rpx;
   height: 227rpx;
+}
+.ngt {
+  width: 100%;
+  box-sizing: border-box;
+}
+.ngt navigator,
+.ngt .title {
+  display: flex;
+  height: 77rpx;
+  line-height: 77rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+.ngt navigator:last-of-type,
+.ngt .title:last-of-type {
+  border-bottom: none;
+}
+.ngt navigator image,
+.ngt .title image {
+  width: 17rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.ngt navigator text,
+.ngt .title text {
+  color: #101013;
+  font-size: 32rpx;
+  text-indent: 50rpx;
 }

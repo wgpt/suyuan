@@ -61,7 +61,7 @@
 }
 .all text {
   color: #12a7ec;
-  font-size: 24rpx;
+  font-size: 28rpx;
   margin-right: 30rpx;
 }
 scroll-view {
@@ -76,6 +76,7 @@ scroll-view .nator {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 32rpx;
   min-height: 400rpx;
 }
 scroll-view .nator text {
@@ -124,13 +125,13 @@ scroll-view .list text {
   white-space: nowrap;
 }
 scroll-view .list text.t1 {
-  font-size: 24rpx;
+  font-size: 30rpx;
   margin: 25rpx 0 10rpx 0;
   min-height: 30rpx;
 }
 scroll-view .list text.t2 {
   margin-bottom: 10rpx;
-  font-size: 20rpx;
+  font-size: 28rpx;
   color: #959595;
 }
 scroll-view .list .t3 {
@@ -165,7 +166,7 @@ scroll-view .list .bar {
   color: #17bd7d;
   border-radius: 50%;
   background-color: #fff;
-  font-size: 20rpx;
+  font-size: 26rpx;
 }
 scroll-view .select {
   border: 1px solid #ff3511;

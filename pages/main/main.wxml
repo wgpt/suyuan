@@ -1,6 +1,6 @@
-        <view class="container">
+<view class="container">
 
-    <image src="/image/main-top.jpg" class="top-img"></image>
+    <image src="/image/main-top.jpg" catchtap="go" data-url="/pages/person/add/index" class="top-img"></image>
 
 
     <view class="main-bar">
@@ -20,7 +20,6 @@
         </navigator>
 
 
-
     </view>
 
     <view class="count">
@@ -29,7 +28,8 @@
             <text>未审核溯源</text>
 
             <text class="count-top">
-                <text class="count-c">{{records}}</text>条
+                <text class="count-c">{{records}}</text>
+                条
             </text>
 
         </view>
@@ -39,7 +39,8 @@
             <text>未审核图片</text>
 
             <text class="count-top">
-                <text class="count-c count-c1">{{image}}</text>条
+                <text class="count-c count-c1">{{image}}</text>
+                条
             </text>
 
         </view>
@@ -50,7 +51,8 @@
             <text>未审核视频</text>
 
             <text class="count-top">
-                <text class="count-c count-c count-c2">{{video}}</text>条
+                <text class="count-c count-c count-c2">{{video}}</text>
+                条
             </text>
 
         </view>
@@ -59,9 +61,36 @@
     </view>
 
 
+    <view class="ngt">
+        <view class="title">
+            <text style="font-weight: bolder">溯源信息列表</text>
 
-    <image src="/image/main-bottom.jpg" class="main-bottom"></image>
 
+        </view>
+
+        <navigator url="/pages/person/list/index?status=0">
+            <text>审核中的溯源</text>
+            <image src="/image/arrow.jpg"></image>
+
+
+        </navigator>
+
+        <navigator url="/pages/person/list/index?status=1">
+            <text>审核通过的溯源</text>
+            <image src="/image/arrow.jpg"></image>
+
+
+        </navigator>
+
+        <navigator url="/pages/person/list/index?status=2">
+            <text>审核未通过的溯源</text>
+            <image src="/image/arrow.jpg"></image>
+
+
+        </navigator>
+
+    </view>
+    <!--<image src="/image/main-bottom.jpg" class="main-bottom"></image>-->
 
 
 </view>
