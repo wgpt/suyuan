@@ -12,7 +12,8 @@ Page({
             ['鸡', '猪'],
             ['苹果', '菜心']
         ],
-        images: []
+        images: [],
+        images_url: [],
     },
 
     /**
@@ -67,7 +68,7 @@ Page({
                             preData: res.image,
                             pid: options.id,
                             name: res.image.title,
-                            images: [res.image.thumb_url]
+                            images: [res.image.thumb]
                         })
 
 
@@ -118,6 +119,34 @@ Page({
             mask: true
         })
         let that = this
+        app.addImage().then((value)=>{
+            if (that.data.pid) {
+                that.setData({
+                    'preData.thumb_url': value[0][0],
+                    'preData.thumb': value[0][1]
+                })
+
+            } else {
+                wx.hideLoading()
+                let images = that.data.images
+                let images_url = that.data.images_url
+
+                for(var i in value){
+                    images.push(value[i][1])
+                    images_url.push(value[i][0])
+                }
+
+
+                // console.log(images);
+                that.setData({
+                    images: images,
+                    images_url: images_url
+                })
+            }
+        })
+
+        return
+
         wx.uploadFile({
             url: app.url + '/misc/image',
             filePath: tem,
@@ -137,7 +166,7 @@ Page({
 
                     if (that.data.pid) {
                         that.setData({
-                            'preData.thumb_url': data.data.thumb_url[0]
+                            'preData.thumb': data.data.thumb_url[0]
                         })
 
                     } else {

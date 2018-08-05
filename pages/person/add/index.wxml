@@ -37,14 +37,14 @@
 
             <view class="photo">
                 <text>作业实景</text>
-                <block wx:for="{{images}}" wx:key="index">
-                    <image  mode="widthFix" src="{{item.thumb_url  || item}}" data-index="{{index}}" data-name="change" catchtap="addClick"></image>
+                <block wx:for="{{images_url}}" wx:key="index">
+                    <image  mode="widthFix" src="{{item.thumb_url  || item}}" data-index="{{index}}" data-name="change" catchtap="upImage"></image>
 
                 </block>
 
 
-                <video src="{{video}}" class="video"  controls wx:if="{{video}}"></video>
-                <button class="add" catchtap="addClick">添加图片</button>
+                <video src="{{video_url}}" class="video"  controls wx:if="{{video}}"></video>
+                <button class="add" catchtap="upImage">添加图片</button>
 
                 <button class="add" style="margin-top: 30rpx" catchtap="videoClick">{{video?'更换':'上传'}}视频</button>
             </view>

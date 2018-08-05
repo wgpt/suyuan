@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -56,8 +56,8 @@
 				{
 					"id": 3,
 					"name": "溯源改",
-					"pathName": "pages/person/upper/index",
-					"query": ""
+					"pathName": "pages/person/add/index",
+					"query": "id=14"
 				},
 				{
 					"id": -1,
@@ -98,7 +98,8 @@
 				{
 					"id": -1,
 					"name": "实名验证",
-					"pathName": "pages/person/card/index"
+					"pathName": "pages/person/card/index",
+					"query": ""
 				}
 			]
 		}

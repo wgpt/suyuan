@@ -283,7 +283,7 @@ App({
                     // console.log(data)
                     if (data.status) {
 
-                        resolve(data.data.thumb_url[0])
+                        resolve([data.data.thumb_url[0],data.data.thumb[0]])
 
                     } else {
                         reject(false)
@@ -344,8 +344,8 @@ App({
                     var data = JSON.parse(res.data)
                     // console.log(data)
                     if (data.status) {
-
-                        resolve(data.data.video_url[0])
+                        console.log(data)
+                        resolve([data.data.video_url[0],data.data.video[0]])
 
 
 

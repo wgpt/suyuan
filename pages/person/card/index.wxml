@@ -32,7 +32,7 @@
             <input type="number" id="mobile_code" name="mobile_code"  placeholder="请输入验证码" placeholder-class="pl"/>
 
             <view class="images" catchtap="upImage">
-                <image mode="widthFix" src="{{image}}" wx:if="{{image}}"></image>
+                <image mode="widthFix" src="{{image_url}}" wx:if="{{image}}"></image>
                 <view>{{image?'重新选择照片':'上传身份证或营业执照'}}</view>
             </view>
 

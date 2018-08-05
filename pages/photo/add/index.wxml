@@ -2,13 +2,13 @@
 <view class="container">
 
   <view class="top">
-    <view class="add" bindtap="addClick">
+    <view class="add" bindtap="upImage">
       <image style="{{pid?'width:160rpx;height:160rpx':''}}" src="{{pid?preData.thumb_url:'/image/add_photo.jpg'}}"></image>
       <text>{{pid?'点击编辑图片':'添加图片'}}</text>
     </view>
 
     <view class="list" wx:if="{{!pid}}">
-      <view wx:for="{{images}}" wx:key="index">
+      <view wx:for="{{images_url}}" wx:key="index">
           <image src="{{item}}"></image>
           <text catchtap="delImg" data-index="{{index}}">×</text>
       </view>

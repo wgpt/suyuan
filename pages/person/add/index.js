@@ -48,16 +48,22 @@ Page({
                         }
                     }
                     let images = []
+                    let images_url = []
                     for(var i in records.images){
-                        images.push(records.images[i].thumb_url)
+                        images.push(records.images[i].thumb)
+                        images_url.push(records.images[i].thumb_url)
                     }
                     records.images = images
-
+                    console.log(data)
                     this.cp.setData({
                         idList: list,
                         ids: index,
                         idIndex: idIndex,
-                        ...records
+                        images_url,
+                        ...records,
+                        video: records.video.video,
+                        video_url: records.video.video_url,
+
                     })
 
 
@@ -93,8 +99,10 @@ Page({
 
     videoClick(e){
       app.addVideo().then(res=>{
+          console.log(res)
           this.setData({
-              video: res
+              video: res[1],
+              video_url: res[0]
           })
       })
     },
@@ -233,12 +241,45 @@ Page({
             }
         })
     },
-    upImage(tem,change,index) { // change 替换
+    upImage(e) { // change 替换
         wx.showLoading({
             title: '加载中',
             mask: true
         })
         let that = this
+        let name = e.currentTarget.dataset['name']
+
+
+        app.addImage().then((res)=>{
+            wx.hideLoading()
+            let images = that.data.images || [];
+            let images_url = that.data.images_url || [];
+            // console.log(data)
+
+                if(name){
+                    let index = e.currentTarget.dataset['index']
+                    // console.log(images,index)
+                    images[index] = res[0][1]
+                    images_url[index] = res[0][0]
+                    // console.log(images);
+                }else{
+                    for(var i in res){
+                        images.push(res[i][1])
+                        images_url.push(res[i][0])
+                    }
+
+
+                    // console.log(images);
+
+                }
+
+                that.setData({
+                    images: images,
+                    images_url
+                })
+        })
+        return
+
         wx.uploadFile({
             url: app.url + '/misc/image',
             filePath: tem,

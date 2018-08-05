@@ -230,8 +230,10 @@ Page({
 
     upImage(e){
         app.addImage(1).then((res)=>{
+            // console.log(res)
             this.setData(({
-                image: res[0]
+                image: res[0][1],
+                image_url: res[0][0]
             }))
         })
 

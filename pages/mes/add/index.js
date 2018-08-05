@@ -65,6 +65,7 @@ Page({
                             list: second,
                             catid: id, // 所有分类
                             video_url: res.video.video_url,
+                            video: res.video.video,
                             pid: options.id,
                             name: res.video.title,
                         })
@@ -137,7 +138,8 @@ Page({
                 if (data.code == 200) {
 
                         that.setData({
-                            'video_url': data.data.video_url[0]
+                            'video_url': data.data.video_url[0],
+                            'video': data.data.video_url[1]
                         })
                     /*if (that.data.pid) {
 
@@ -217,7 +219,7 @@ Page({
                 data: {
                     title: name,
                     catid: this.data.catid[catid[0]][catid[1]],
-                    video: this.data.video_url,
+                    video: this.data.video,
                     id: this.data.pid
                 },
                 success(e) {
@@ -245,7 +247,7 @@ Page({
                 data: {
                     title: name,
                     catid: this.data.catid[catid[0]][catid[1]],
-                    video: this.data.video_url
+                    video: this.data.video
                 },
                 success(e) {
                     if (e.status) {
@@ -363,6 +365,17 @@ Page({
     // 选择视频
     addClick(){
         var that = this
+
+        app.addVideo().then((res)=>{
+            that.setData({
+                'video_url': res[0],
+                'video': res[1]
+            })
+
+        })
+
+        return
+
         wx.chooseVideo({
             sourceType: ['album','camera'],
             maxDuration: 60,
